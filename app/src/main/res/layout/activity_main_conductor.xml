@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9CC1E"
+    tools:context=".MainConductorActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="408dp"
+        android:layout_height="94dp"
+        android:background="#049BDF"
+        android:gravity="center"
+        android:text="BusTrack"
+        android:textColor="#FCF9F9"
+        android:textSize="50sp"
+        app:fontFamily="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/roadName"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="164dp"
+        android:inputType="textPersonName"
+        android:text="Road name : "
+        android:textColor="#049BDF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:inputType="textPersonName"
+        android:text="City: "
+        android:textColor="#049BDF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roadName" />
+
+    <TextView
+        android:id="@+id/pcode"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:inputType="textPersonName"
+        android:text="Postal Code: "
+        android:textColor="#049BDF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#049BDF"
+        android:onClick="map1"
+        android:text="Map"
+        android:textColor="#FCEEE8E8"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pcode" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="207dp"
+        android:layout_height="56dp"
+        android:text="Your Location"
+        android:textColor="#049BDF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/roadName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

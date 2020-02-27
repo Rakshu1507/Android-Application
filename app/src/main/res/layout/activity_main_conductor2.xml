@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9CC1E"
+    tools:context=".MainConductor2Activity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="408dp"
+        android:layout_height="94dp"
+        android:background="#049BDF"
+        android:gravity="center"
+        android:text="BusTrack"
+        android:textColor="#FCF9F9"
+        android:textSize="50sp"
+        app:fontFamily="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/busId"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="228dp"
+        android:ems="10"
+        android:hint="Enter Bus No."
+        android:inputType="textPersonName"
+        android:textColor="#F4F7F8"
+        android:textColorHint="#FFF4F7F8"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sPoint"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Start Point"
+        android:inputType="textPersonName"
+        android:textColor="#049BDF"
+        android:textColorHint="#FFF4F7F8"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/busId" />
+
+    <EditText
+        android:id="@+id/ePoint"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter End Point"
+        android:inputType="textPersonName"
+        android:textColor="#049BDF"
+        android:textColorHint="#FFF4F7F8"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sPoint" />
+
+    <Button
+        android:id="@+id/dataButton"
+        android:layout_width="105dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="160dp"
+        android:background="#049BDF"
+        android:text="Enter"
+        android:textColor="#FCEEE8E8"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ePoint"
+        app:layout_constraintVertical_bias="0.897" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="203dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="36dp"
+        android:background="#D9CC1E"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Enter Bus data"
+        android:textColor="#049BDF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

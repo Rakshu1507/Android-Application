@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1034650650591",
+    "firebase_url": "https://bus-tracker-bf5db.firebaseio.com",
+    "project_id": "bus-tracker-bf5db",
+    "storage_bucket": "bus-tracker-bf5db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034650650591:android:9b8542b5f9f5acfafea66a",
+        "android_client_info": {
+          "package_name": "com.example.bustrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034650650591-em9d7ia0nkujt8bmdh1cdlpu0k57748m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bustrack",
+            "certificate_hash": "36fdd738a5b58fa13c6325afb16a0c4116e36cb7"
+          }
+        },
+        {
+          "client_id": "1034650650591-spdof7ivj7k97v7p33ce8flru7o9aeai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLXC0vfhWb_9d5BtT2QX1YMzlGvAg7hXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034650650591-spdof7ivj7k97v7p33ce8flru7o9aeai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
