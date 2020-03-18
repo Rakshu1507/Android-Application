@@ -3,4 +3,12 @@
     <string name="title_activity_maps2">Map</string>
     <string name="map_key" translatable="false">AIzaSyAvs6BRpvkTiozkDGTakQrYP_oBE0u5qFM</string>
     <string name="title_activity_maps">Map</string>
+    <string name="enter_bus_no">Enter Bus No.</string>
+    <string name="enter_start_point">Enter Start Point</string>
+    <string name="enter_end_point">Enter End Point</string>
+    <string name="enter_bus_data">Enter Bus data</string>
+    <string name="enter">Enter</string>
+    <string name="bustrack">BusTrack</string>
+    <string name="title_activity_maps_passanger">Map</string>
+    <string name="address_text">"Name: %1$s \n Address: %2$s \n Timestamp: %3$tr"</string>
 </resources>

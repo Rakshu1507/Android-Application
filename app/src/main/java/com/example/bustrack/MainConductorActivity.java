@@ -1,6 +1,7 @@
 package com.example.bustrack;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -36,11 +37,12 @@ public class MainConductorActivity extends AppCompatActivity {
     String busId;
     Intent intent;
 
+    @SuppressLint("SetTextI18n")
     public void updateLocationInfo(Location location){
 
         Log.i("LocationInfo", location.toString());
 
-        LatLng userLocation= new LatLng(location.getLatitude(),location.getLongitude());
+        LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
 
         databaseconductor.child(busId).child("latitude").setValue(location.getLatitude());
         databaseconductor.child(busId).child("longitude").setValue(location.getLongitude());
@@ -77,11 +79,11 @@ public class MainConductorActivity extends AppCompatActivity {
                 address3 = listaddress.get(0).getPostalCode();
             }
 
-            TextView roadName1 = (TextView) findViewById(R.id.roadName);
+            TextView roadName1 = findViewById(R.id.roadName);
             roadName1.setText("Road Name: " +address1);
-            TextView city1 = (TextView) findViewById(R.id.city);
+            TextView city1 = findViewById(R.id.city);
             city1.setText("City: " +address2);
-            TextView pcode= (TextView) findViewById(R.id.pcode);
+            TextView pcode= findViewById(R.id.pcode);
             pcode.setText("Postal Code: " +address3);
 
 

@@ -38,8 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.617"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/sPoint"
@@ -56,8 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.617"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/busId"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/busId" />
 
     <EditText
         android:id="@+id/ePoint"
@@ -75,8 +73,7 @@
         app:layout_constraintHorizontal_bias="0.617"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sPoint"
-        android:autofillHints=""
-        tools:targetApi="o" />
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/dataButton"

@@ -14,7 +14,7 @@
         android:layout_marginBottom="32dp"
         android:background="#049BDF"
         android:onClick="button1method"
-        android:text="Passanger Login"
+        android:text="Track Buses!"
         android:textColor="#EEE8E8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

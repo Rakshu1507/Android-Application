@@ -8,6 +8,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.location.places.PlaceDetectionClient;
+import com.google.android.gms.location.places.Places;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void button1method(View view) {
-        Intent intent = new Intent(this, MainPassengerActivity.class);
+        Intent intent = new Intent(this, MainPassangerActivity1.class);
         startActivity(intent);
         finish();
 
@@ -45,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             {
 
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-            }else
+            }
+            else
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
         }
 
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PlaceDetectionClient mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
 
 
     }
