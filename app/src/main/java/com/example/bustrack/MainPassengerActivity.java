@@ -8,7 +8,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -115,10 +114,6 @@ public class MainPassengerActivity extends AppCompatActivity {
                 lastKnownLocation=locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
             }
         }
-
-
-
-
     }
 
     @Override
@@ -179,21 +174,11 @@ public class MainPassengerActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i = new Intent(MainPassengerActivity.this, MainActivity.class);
+        Intent i = new Intent(MainPassengerActivity.this, MainPassangerActivity1.class);
         startActivity(i);
-        finish();
-    }
-
-    public void map2(View mapview1){
-
-        Intent intent = new Intent(this, MainPassengerActivity.class);
-        startActivity(intent);
         finish();
     }
 

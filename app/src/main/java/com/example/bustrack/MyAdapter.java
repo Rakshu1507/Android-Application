@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     private ArrayList<ConductorLocationModel> listitems;
+
     private Context context;
     Location location;
 

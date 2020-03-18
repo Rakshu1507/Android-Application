@@ -25,12 +25,19 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import androidx.annotation.RequiresApi;
+import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MapsActivityPassanger extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -41,15 +48,14 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
+    Marker busMarker;
     LocationRequest mLocationRequest;
     FusedLocationProviderClient fusedLocationProviderClient;
     Intent intent;
-
-    String mLastPlaceName;
-    private Object SecurityException;
-
-    PlacesClient placesClient;
-
+    private DatabaseReference busData1;
+    private ArrayList<ConductorLocationModel> listItems;
+    private RecyclerView recyclerview;
+    private RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +63,8 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
         setContentView(R.layout.activity_maps);
 
         intent=getIntent();
+
+        busData1= FirebaseDatabase.getInstance().getReference("");
 
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this); //initiate in onCreate
@@ -69,6 +77,40 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        busData1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //listItems.clear();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    ConductorLocationModel bus=snapshot.getValue(ConductorLocationModel.class);
+                  //  listItems.add(bus);
+                }
+
+                adapter = new MyAdapter(listItems,mLastLocation, MapsActivityPassanger.this);
+               // recyclerview.setAdapter(adapter);
+                LatLng latLng2=new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+                MarkerOptions markerOptions1 = new MarkerOptions();
+                markerOptions1.position(latLng2);
+                markerOptions1.title("bus");
+                markerOptions1.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                busMarker = mMap.addMarker(markerOptions1);
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 
 
     @Override
@@ -120,7 +162,6 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onLocationChanged(Location location) {
 
@@ -133,9 +174,17 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("You Are Here!");
+        markerOptions.title("Current Position");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
+
+        Circle circle = mMap.addCircle(new CircleOptions()
+                .center(new LatLng(location.getLatitude(),location.getLongitude()))
+                .radius(15000)
+                .strokeColor(Color.RED)
+                .fillColor(Color.BLUE));
+
+
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -145,13 +194,6 @@ public class MapsActivityPassanger extends FragmentActivity implements OnMapRead
         if (mGoogleApiClient != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
         }
-
-        Circle circle = mMap.addCircle(new CircleOptions()
-                .center(latLng)
-                .radius(15000)
-                .strokeColor(Color.BLUE)
-                .fillColor(Color.YELLOW));
-
 
     }
 
