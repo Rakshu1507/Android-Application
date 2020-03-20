@@ -29,4 +29,13 @@ public class MainPassangerActivity1 extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(MainPassangerActivity1.this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
 }
